@@ -6,11 +6,11 @@ module ZSS
         backend: Settings.broker.backend
       )
 
-      service = ZSS::Service.new(:"hello-world", config)
+      service = ZSS::Service.new(:person, config)
 
-      helloWorldInstance = HelloWorldService.new
+      personInstance = PersonService.new
 
-      service.add_route(helloWorldInstance, "HELLO/WORLD", :get)
+      service.add_route(personInstance, :get)
 
       service
     end

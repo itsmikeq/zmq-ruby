@@ -5,6 +5,9 @@ defaults: &defaults
   logging:
     console:
       level: info
+  database:
+    adapter: postgresql
+    database: zss-tutorial-development
 
 development:
   <<: *defaults

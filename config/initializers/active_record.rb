@@ -1,1 +1,1 @@
-#ActiveRecord::Base.establish_connection(Settings.database)
+ActiveRecord::Base.establish_connection(Settings.database)

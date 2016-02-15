@@ -7,7 +7,15 @@ config = {
   timeout: 1000
 }
 
-sid = "hello-word"
+sid = "person"
 
-client = ZSS::Client.new(sid, config)
-p client.hello_world()
+begin
+  client = ZSS::Client.new(sid, config)
+  p client.get()
+rescue ZSS::Client => e
+  if e.code == 404
+    p e.message
+  else
+    raise e
+  end
+end
